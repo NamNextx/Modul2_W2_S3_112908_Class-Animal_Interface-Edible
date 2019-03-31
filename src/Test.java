@@ -1,14 +1,21 @@
+import Animal.*;
+import IEdibles.*;
 public class Test {
     public static void main(String[] args) {
-         Animal[] animals = new Animal[2];
-        animals[0] = new Tiger();
-        animals[1] = new Chicken();
-        for (Animal animal : animals) {
+
+        Animals[] animals = new Animals[2];
+        animals[0] = new Tigers();
+        animals[1] = new Chickens();
+        for (Animals animal : animals) {
             System.out.println(animal.makeSound());
 
-            if (animal instanceof Chicken) {
-                Edible edibler = (Chicken) animal;
+            if (animal instanceof Chickens) {
+                IEdible edibler = (Chickens) animal;
                 System.out.println(edibler.howToEat());
+            }
+            else if (animal instanceof Tigers){
+                IEdible edible=(Tigers) animal;
+                System.out.println(edible.howToEat());
             }
         }
     }
